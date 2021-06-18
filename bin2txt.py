@@ -14,8 +14,8 @@ def bin2txt(r_path, w_path):
                 msg = r_f.read(1)
                 if not msg:
                     break
-                getHex = binascii.b2a_hex(msg).decode('utf-8')
-                w_f.write("0x" + getHex + ", ")
+                data_str = "0x" +  binascii.b2a_hex(msg).decode('utf-8') + ", "
+                w_f.write(data_str)
                 counter += 1
                 # 换行
                 if (counter == 8):
@@ -23,7 +23,7 @@ def bin2txt(r_path, w_path):
                     w_f.write("\r")
                     w_f.write("\t")
 
-            w_f.write("}\r")
+            w_f.write("};\r")
         r_f.close()
         w_f.close()
 

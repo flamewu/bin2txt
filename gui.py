@@ -85,7 +85,7 @@ def select_file():
 
     # 保存txt文件路径
     wf_path = os.path.dirname(entry_rf_name.get()) + '/' +\
-              os.path.splitext(os.path.basename(entry_rf_name.get()))[0] + ".h"
+              os.path.splitext(os.path.basename(entry_rf_name.get()))[0] + ".c"
 
     entry_wf_name.delete(0, END)
     entry_wf_name.insert(0, wf_path)
