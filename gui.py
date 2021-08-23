@@ -75,7 +75,7 @@ def select_path():
 def select_file():
     """选择保存目录"""
     # 选择文件目录
-    rf_path = askopenfilename(filetypes=[('Hex files', '*.bin')])
+    rf_path = askopenfilename(filetypes=[('Hex files', '*.*')])
     entry_rf_name.delete(0, END)
     entry_rf_name.insert(0, rf_path)
 
@@ -85,7 +85,7 @@ def select_file():
 
     # 保存txt文件路径
     wf_path = os.path.dirname(entry_rf_name.get()) + '/' +\
-              os.path.splitext(os.path.basename(entry_rf_name.get()))[0] + ".c"
+              os.path.splitext(os.path.basename(entry_rf_name.get()))[0] + ".h"
 
     entry_wf_name.delete(0, END)
     entry_wf_name.insert(0, wf_path)
@@ -101,7 +101,7 @@ entry_rf_name.pack(side="left",
                        padx=10,  # 外间距x
                        pady=10,  # 外间距y
                        )
-bottom_folder = Button(frame_top1, text='保存目录',
+bottom_folder = Button(frame_top1, text='选择文件',
                        command=lambda: thread_it(select_file, ), width=10, height=1, relief='groove')
 bottom_folder.pack(
     padx=10,  # 外间距x
